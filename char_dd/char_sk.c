@@ -61,13 +61,13 @@ static int csk_init(void)
 	err = cdev_add (&cdev, dev, 1);
 	/* Fail gracefully if need be */
 	if (err)
-		printk(KERN_NOTICE "Error %d adding scull ", err);
+		printk(KERN_NOTICE "Error %d adding scull\n", err);
      return 0;
 }
 
 static void csk_exit(void)
 {
-     printk(KERN_ALERT "Goodbye, CSK");
+     printk(KERN_ALERT "Goodbye, CSK\n");
      cdev_del(&cdev); 
      unregister_chrdev_region(dev, 1);
 
